@@ -53,9 +53,9 @@
     <div class="book"
         data-level="1.3"
         data-chapter-title="The .npmignore File"
-        data-filepath="publishing/the-npmmignore-file.md"
+        data-filepath="publishing/the-npmignore-file.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 16:53:37 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 17:34:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -130,10 +130,10 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="publishing/the-npmmignore-file.html">
+        <li class="chapter active" data-level="1.3" data-path="publishing/the-npmignore-file.html">
             
                 
-                    <a href="../publishing/the-npmmignore-file.html">
+                    <a href="../publishing/the-npmignore-file.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -329,6 +329,48 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="the-npmignore-file">The .npmignore File</h1>
+<p>Use a <code>.npmignore</code> file to keep stuff out of your package.  If there&apos;s
+no <code>.npmignore</code> file, but there <em>is</em> a <code>.gitignore</code> file, then npm will
+ignore the stuff matched by the <code>.gitignore</code> file.  If you <em>want</em> to
+include something that is excluded by your <code>.gitignore</code> file, you can
+create an empty <code>.npmignore</code> file to override it. Like <code>git</code>, <code>npm</code> looks
+for <code>.npmignore</code> and <code>.gitignore</code> files in all subdirectories of your
+package, not only the root directory.</p>
+<p><code>.npmignore</code> files follow the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files" target="_blank">same pattern rules</a>
+as <code>.gitignore</code> files:</p>
+<ul>
+<li>Blank lines or lines starting with <code>#</code> are ignored.</li>
+<li>Standard glob patterns work.</li>
+<li>You can end patterns with a forward slash <code>/</code> to specify a directory.</li>
+<li>You can negate a pattern by starting it with an exclamation point <code>!</code>.</li>
+</ul>
+<p>By default, the following paths and files are ignored, so there&apos;s no
+need to add them to <code>.npmignore</code> explicitly:</p>
+<ul>
+<li><code>.*.swp</code></li>
+<li><code>._*</code></li>
+<li><code>.DS_Store</code></li>
+<li><code>.git</code></li>
+<li><code>.hg</code></li>
+<li><code>.npmrc</code></li>
+<li><code>.lock-wscript</code></li>
+<li><code>.svn</code></li>
+<li><code>.wafpickle-*</code></li>
+<li><code>config.gypi</code></li>
+<li><code>CVS</code></li>
+<li><code>npm-debug.log</code></li>
+</ul>
+<p>Additionally, everything in <code>node_modules</code> is ignored, except for
+bundled dependencies. npm automatically handles this for you, so don&apos;t
+bother adding <code>node_modules</code> to <code>.npmignore</code>.</p>
+<p>The following paths and files are never ignored, so adding them to
+<code>.npmignore</code> is pointless:</p>
+<ul>
+<li><code>package.json</code></li>
+<li><code>README</code> (and its variants)</li>
+<li><code>CHANGELOG</code> (and its variants)</li>
+<li><code>LICENSE</code> / <code>LICENCE</code></li>
+</ul>
 
                     
                     </section>

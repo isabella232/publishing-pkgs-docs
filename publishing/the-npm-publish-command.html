@@ -39,7 +39,7 @@
         
     
     
-    <link rel="next" href="../publishing/the-npmmignore-file.html" />
+    <link rel="next" href="../publishing/the-npmignore-file.html" />
     
     
     <link rel="prev" href="../publishing/the-npm-registry.html" />
@@ -55,7 +55,7 @@
         data-chapter-title="The npm publish Command"
         data-filepath="publishing/the-npm-publish-command.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 16:53:37 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 17:34:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -130,10 +130,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="publishing/the-npmmignore-file.html">
+        <li class="chapter " data-level="1.3" data-path="publishing/the-npmignore-file.html">
             
                 
-                    <a href="../publishing/the-npmmignore-file.html">
+                    <a href="../publishing/the-npmignore-file.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -329,6 +329,47 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="the-npm-publish-command">The npm publish Command</h1>
+<h1 id="synopsis">SYNOPSIS</h1>
+<pre><code>npm publish [&lt;tarball&gt;|&lt;folder&gt;] [--tag &lt;tag&gt;] [--access &lt;public|restricted&gt;]
+
+Publishes &apos;.&apos; if no argument supplied
+Sets tag &apos;latest&apos; if no --tag specified
+</code></pre><h2 id="description">DESCRIPTION</h2>
+<p>Publishes a package to the registry so that it can be installed by name. All
+files in the package directory are included if no local <code>.gitignore</code> or
+<code>.npmignore</code> file exists. If both files exist and a file is ignored by
+<code>.gitignore</code> but not by <code>.npmignore</code> then it will be included.  See
+<code>npm-developers(7)</code> for full details on what&apos;s included in the published
+package, as well as details on how the package is built.</p>
+<p>By default npm will publish to the public registry. This can be overridden by
+specifying a different default registry or using a <code>npm-scope(7)</code> in the name
+(see <code>package.json(5)</code>).</p>
+<ul>
+<li><p><code>&lt;folder&gt;</code>:
+A folder containing a package.json file</p>
+</li>
+<li><p><code>&lt;tarball&gt;</code>:
+A url or file path to a gzipped tar archive containing a single folder
+with a package.json file inside.</p>
+</li>
+<li><p><code>[--tag &lt;tag&gt;]</code>
+Registers the published package with the given tag, such that <code>npm install
+&lt;name&gt;@&lt;tag&gt;</code> will install this version.  By default, <code>npm publish</code> updates
+and <code>npm install</code> installs the <code>latest</code> tag. See <code>npm-dist-tag(1)</code> for
+details about tags.</p>
+</li>
+<li><p><code>[--access &lt;public|restricted&gt;]</code>
+Tells the registry whether this package should be published as public or
+restricted. Only applies to scoped packages, which default to <code>restricted</code>.
+If you don&apos;t have a paid account, you must publish with <code>--access public</code>
+to publish scoped packages.</p>
+</li>
+</ul>
+<p>Fails if the package name and version combination already exists in
+the specified registry.</p>
+<p>Once a package is published with a given name and version, that
+specific name and version combination can never be used again, even if
+it is removed with npm-unpublish(1).</p>
 
                     
                     </section>
@@ -342,7 +383,7 @@
         <a href="../publishing/the-npm-registry.html" class="navigation navigation-prev " aria-label="Previous page: The npm Registry"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../publishing/the-npmmignore-file.html" class="navigation navigation-next " aria-label="Next page: The .npmignore File"><i class="fa fa-angle-right"></i></a>
+        <a href="../publishing/the-npmignore-file.html" class="navigation navigation-next " aria-label="Next page: The .npmignore File"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

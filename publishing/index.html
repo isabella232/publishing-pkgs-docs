@@ -55,7 +55,7 @@
         data-chapter-title="Publishing an npm Package"
         data-filepath="publishing/README.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 16:53:37 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 17:34:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -130,10 +130,10 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="publishing/the-npmmignore-file.html">
+        <li class="chapter " data-level="1.3" data-path="publishing/the-npmignore-file.html">
             
                 
-                    <a href="../publishing/the-npmmignore-file.html">
+                    <a href="../publishing/the-npmignore-file.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -329,6 +329,14 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="publishing-an-npm-package">Publishing an npm Package</h1>
+<p>You can publish any directory that has a <code>package.json</code> file, e.g. a <a href="getting-started/creating-node-modules">node module</a>.</p>
+<h2 id="creating-a-user">Creating a user</h2>
+<p>To publish, you must have a user on the npm registry. If you don&apos;t have one, create it with <code>npm adduser</code>. If you created one on the site, use <code>npm login</code> to store the credentials on the client.</p>
+<p>Test: Use <code>npm config ls</code> to ensure that the credentials are stored on your client. Check that it has been added to the registry by going to <a href="https://npmjs.com/~" target="_blank">https://npmjs.com/~</a><username>.</username></p>
+<h2 id="publishing-the-package">Publishing the package</h2>
+<p>Use <code>npm publish</code> to publish the package.</p>
+<p>Note that everything in the directory will be included unless it is ignored by a local <code>.gitignore</code> or <code>.npmignore</code> file as described in <a href="misc/developers"><code>npm-developers</code></a>.</p>
+<p>Test: Go to <code>https://npmjs.com/package/&lt;package&gt;</code>. You should see the information for your new package.</p>
 
                     
                     </section>
