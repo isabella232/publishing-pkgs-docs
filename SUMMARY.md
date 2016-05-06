@@ -8,8 +8,9 @@
   * [Making Sure Your Package Installs](publishing/making-sure-your-package-installs.md)
 * [Updating](updating/README.md)
   * [Semantic Versioning](updating/semantic-versioning.md)
+  * [The npm semver Utility](updating/the-npm-semver-utility.md)
   * [Using Tags](updating/using-tags.md)
     * [The npm dist-tag Command](updating/the-npm-dist-tag-command.md)
-* [Deprecating and Unpublishing]
-  * [The npm deprecate Command](updating/npm-deprecate.md)
-  * [The npm unpublish Command](updating/npm-unpublish.md)
+  * [Deprecating and Unpublishing](updating/deprecating-and-unpublishing.md)
+    * [The npm deprecate Command](updating/npm-deprecate.md)
+    * [The npm unpublish Command](updating/npm-unpublish.md)
