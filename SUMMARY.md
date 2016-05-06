@@ -3,7 +3,7 @@
 * [Publishing an npm Package](publishing/README.md)
   * [The npm Registry](publishing/the-npm-registry.md)
   * [The npm publish Command](publishing/the-npm-publish-command.md)
-  * [The .npmignore File](publishing/the-npmmignore-file.md)
+  * [The .npmignore File](publishing/the-npmignore-file.md)
   * [The npm link Command](publishing/the-npm-link-command.md)
   * [Making Sure Your Package Installs](publishing/making-sure-your-package-installs.md)
 * [Updating](updating/README.md)
