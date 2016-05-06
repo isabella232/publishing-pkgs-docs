@@ -39,7 +39,7 @@
         
     
     
-    <link rel="next" href="../updating/using-tags.html" />
+    <link rel="next" href="../updating/the-npm-semver-utility.html" />
     
     
     <link rel="prev" href="../updating/index.html" />
@@ -55,7 +55,7 @@
         data-chapter-title="Semantic Versioning"
         data-filepath="updating/semantic-versioning.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 17:36:21 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 18:53:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -211,14 +211,29 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="updating/using-tags.html">
+        <li class="chapter " data-level="2.2" data-path="updating/the-npm-semver-utility.html">
+            
+                
+                    <a href="../updating/the-npm-semver-utility.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        The npm semver Utility
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="updating/using-tags.html">
             
                 
                     <a href="../updating/using-tags.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.</b>
+                            <b>2.3.</b>
                         
                         Using Tags
                     </a>
@@ -227,14 +242,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.2.1" data-path="updating/the-npm-dist-tag-command.html">
+        <li class="chapter " data-level="2.3.1" data-path="updating/the-npm-dist-tag-command.html">
             
                 
                     <a href="../updating/the-npm-dist-tag-command.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.1.</b>
+                            <b>2.3.1.</b>
                         
                         The npm dist-tag Command
                     </a>
@@ -247,27 +262,30 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="2.4" data-path="updating/deprecating-and-unpublishing.html">
             
-        </li>
-    
-        <li class="chapter " data-level="3" >
-            
-            <span><b>3.</b> [Deprecating and Unpublishing]</span>
+                
+                    <a href="../updating/deprecating-and-unpublishing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Deprecating and Unpublishing
+                    </a>
             
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="updating/npm-deprecate.html">
+        <li class="chapter " data-level="2.4.1" data-path="updating/npm-deprecate.html">
             
                 
                     <a href="../updating/npm-deprecate.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>2.4.1.</b>
                         
                         The npm deprecate Command
                     </a>
@@ -275,18 +293,23 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="updating/npm-unpublish.html">
+        <li class="chapter " data-level="2.4.2" data-path="updating/npm-unpublish.html">
             
                 
                     <a href="../updating/npm-unpublish.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>2.4.2.</b>
                         
                         The npm unpublish Command
                     </a>
             
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -329,6 +352,24 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="semantic-versioning">Semantic Versioning</h1>
+<p>Semantic versioning is a standard that a lot of projects use to communicate what kinds of changes are in this release. It&apos;s important to communicate what kinds of changes are in a release because sometimes those changes will break the code that depends on the package.</p>
+<h2 id="semver-for-publishers">Semver for publishers</h2>
+<p>If a project is going to be shared with others, it should start at <code>1.0.0</code>, though some projects on npm don&apos;t follow this rule.</p>
+<p>After this, changes should be handled as follows:</p>
+<ul>
+<li>Bug fixes and other minor changes: Patch release, increment the last number, e.g. 1.0.1</li>
+<li>New features which don&apos;t break existing features: Minor release, increment the middle number, e.g. 1.1.0</li>
+<li>Changes which break backwards compatibility: Major release, increment the first number, e.g. 2.0.0</li>
+</ul>
+<h2 id="semver-for-consumers">Semver for consumers</h2>
+<p>As a consumer, you can specify which kinds of updates your app can accept in the <code>package.json</code> file.</p>
+<p>If you were starting with a package 1.0.4, this is how you would specify the ranges:</p>
+<ul>
+<li>Patch releases: <code>1.0</code> or <code>1.0.x</code> or <code>~1.0.4</code></li>
+<li>Minor releases: <code>1</code> or <code>1.x</code> or <code>^1.0.4</code></li>
+<li>Major releases: <code>*</code> or <code>x</code></li>
+</ul>
+<p>You can also specify more <a href="misc/semver">granular semver ranges</a>.</p>
 
                     
                     </section>
@@ -342,7 +383,7 @@
         <a href="../updating/index.html" class="navigation navigation-prev " aria-label="Previous page: Updating"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../updating/using-tags.html" class="navigation navigation-next " aria-label="Next page: Using Tags"><i class="fa fa-angle-right"></i></a>
+        <a href="../updating/the-npm-semver-utility.html" class="navigation navigation-next " aria-label="Next page: The npm semver Utility"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

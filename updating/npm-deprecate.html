@@ -42,7 +42,7 @@
     <link rel="next" href="../updating/npm-unpublish.html" />
     
     
-    <link rel="prev" href="../updating/the-npm-dist-tag-command.html" />
+    <link rel="prev" href="../updating/deprecating-and-unpublishing.html" />
     
 
         
@@ -51,11 +51,11 @@
         
         
     <div class="book"
-        data-level="3.1"
+        data-level="2.4.1"
         data-chapter-title="The npm deprecate Command"
         data-filepath="updating/npm-deprecate.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 17:36:21 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 18:53:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -211,14 +211,29 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="updating/using-tags.html">
+        <li class="chapter " data-level="2.2" data-path="updating/the-npm-semver-utility.html">
+            
+                
+                    <a href="../updating/the-npm-semver-utility.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        The npm semver Utility
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="updating/using-tags.html">
             
                 
                     <a href="../updating/using-tags.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.</b>
+                            <b>2.3.</b>
                         
                         Using Tags
                     </a>
@@ -227,14 +242,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.2.1" data-path="updating/the-npm-dist-tag-command.html">
+        <li class="chapter " data-level="2.3.1" data-path="updating/the-npm-dist-tag-command.html">
             
                 
                     <a href="../updating/the-npm-dist-tag-command.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.1.</b>
+                            <b>2.3.1.</b>
                         
                         The npm dist-tag Command
                     </a>
@@ -247,27 +262,30 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="2.4" data-path="updating/deprecating-and-unpublishing.html">
             
-        </li>
-    
-        <li class="chapter " data-level="3" >
-            
-            <span><b>3.</b> [Deprecating and Unpublishing]</span>
+                
+                    <a href="../updating/deprecating-and-unpublishing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Deprecating and Unpublishing
+                    </a>
             
             
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="3.1" data-path="updating/npm-deprecate.html">
+        <li class="chapter active" data-level="2.4.1" data-path="updating/npm-deprecate.html">
             
                 
                     <a href="../updating/npm-deprecate.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>2.4.1.</b>
                         
                         The npm deprecate Command
                     </a>
@@ -275,18 +293,23 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="updating/npm-unpublish.html">
+        <li class="chapter " data-level="2.4.2" data-path="updating/npm-unpublish.html">
             
                 
                     <a href="../updating/npm-unpublish.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>2.4.2.</b>
                         
                         The npm unpublish Command
                     </a>
             
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -329,6 +352,17 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="the-npm-deprecate-command">The npm deprecate Command</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<pre><code>npm deprecate &lt;pkg&gt;[@&lt;version&gt;] &lt;message&gt;
+</code></pre><h2 id="description">DESCRIPTION</h2>
+<p>This command will update the npm registry entry for a package, providing
+a deprecation warning to all who attempt to install it.</p>
+<p>It works on version ranges as well as specific versions, so you can do
+something like this:</p>
+<pre><code>npm deprecate my-thing@&quot;&lt; 0.2.3&quot; &quot;critical bug fixed in v0.2.3&quot;
+</code></pre><p>Note that you must be the package owner to deprecate something.  See the
+<code>owner</code> and <code>adduser</code> help topics.</p>
+<p>To un-deprecate a package, specify an empty string (<code>&quot;&quot;</code>) for the <code>message</code> argument.</p>
 
                     
                     </section>
@@ -339,7 +373,7 @@
         </div>
 
         
-        <a href="../updating/the-npm-dist-tag-command.html" class="navigation navigation-prev " aria-label="Previous page: The npm dist-tag Command"><i class="fa fa-angle-left"></i></a>
+        <a href="../updating/deprecating-and-unpublishing.html" class="navigation navigation-prev " aria-label="Previous page: Deprecating and Unpublishing"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../updating/npm-unpublish.html" class="navigation navigation-next " aria-label="Next page: The npm unpublish Command"><i class="fa fa-angle-right"></i></a>

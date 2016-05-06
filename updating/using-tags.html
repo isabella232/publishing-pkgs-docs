@@ -42,7 +42,7 @@
     <link rel="next" href="../updating/the-npm-dist-tag-command.html" />
     
     
-    <link rel="prev" href="../updating/semantic-versioning.html" />
+    <link rel="prev" href="../updating/the-npm-semver-utility.html" />
     
 
         
@@ -51,11 +51,11 @@
         
         
     <div class="book"
-        data-level="2.2"
+        data-level="2.3"
         data-chapter-title="Using Tags"
         data-filepath="updating/using-tags.md"
         data-basepath=".."
-        data-revision="Fri May 06 2016 17:36:21 GMT+0000 (UTC)"
+        data-revision="Fri May 06 2016 18:53:56 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -211,14 +211,29 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="updating/using-tags.html">
+        <li class="chapter " data-level="2.2" data-path="updating/the-npm-semver-utility.html">
+            
+                
+                    <a href="../updating/the-npm-semver-utility.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        The npm semver Utility
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="updating/using-tags.html">
             
                 
                     <a href="../updating/using-tags.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.</b>
+                            <b>2.3.</b>
                         
                         Using Tags
                     </a>
@@ -227,14 +242,14 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.2.1" data-path="updating/the-npm-dist-tag-command.html">
+        <li class="chapter " data-level="2.3.1" data-path="updating/the-npm-dist-tag-command.html">
             
                 
                     <a href="../updating/the-npm-dist-tag-command.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.1.</b>
+                            <b>2.3.1.</b>
                         
                         The npm dist-tag Command
                     </a>
@@ -247,27 +262,30 @@
             
         </li>
     
-
-            </ul>
+        <li class="chapter " data-level="2.4" data-path="updating/deprecating-and-unpublishing.html">
             
-        </li>
-    
-        <li class="chapter " data-level="3" >
-            
-            <span><b>3.</b> [Deprecating and Unpublishing]</span>
+                
+                    <a href="../updating/deprecating-and-unpublishing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Deprecating and Unpublishing
+                    </a>
             
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1" data-path="updating/npm-deprecate.html">
+        <li class="chapter " data-level="2.4.1" data-path="updating/npm-deprecate.html">
             
                 
                     <a href="../updating/npm-deprecate.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>2.4.1.</b>
                         
                         The npm deprecate Command
                     </a>
@@ -275,18 +293,23 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="updating/npm-unpublish.html">
+        <li class="chapter " data-level="2.4.2" data-path="updating/npm-unpublish.html">
             
                 
                     <a href="../updating/npm-unpublish.html">
                 
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>2.4.2.</b>
                         
                         The npm unpublish Command
                     </a>
             
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -329,6 +352,28 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="using-tags">Using Tags</h1>
+<p>Tags are a supplement to <a href="http://semver.org/" target="_blank">semver</a> (e.g., v0.12) for
+organizing and labeling different versions of packages. In addition to being
+more human-readable, tags allow publishers to distribute their packages more
+effectively.</p>
+<h2 id="adding-tags">Adding tags</h2>
+<p>To add a tag to a specific version of your package, use
+<code>npm dist-tag add &lt;pkg&gt;@&lt;version&gt; [&lt;tag&gt;]</code>. See
+<a href="https://docs.npmjs.com/cli/dist-tag" target="_blank">the CLI docs</a> for more information.</p>
+<h2 id="publishing-with-tags">Publishing with tags</h2>
+<p>By default, <code>npm publish</code> will tag your package with the <code>latest</code> tag. If you
+use the <code>--tag</code> flag, you can specify another tag to use. For example, the
+following will publish your package with the <code>beta</code> tag:</p>
+<pre><code>npm publish --tag beta
+</code></pre><h2 id="installing-with-tags">Installing with tags</h2>
+<p>Like <code>npm publish</code>, <code>npm install &lt;pkg&gt;</code> will use the <code>latest</code> tag by default.
+To override this behavior, use <code>npm install &lt;pkg&gt;@&lt;tag&gt;</code>. The following example
+will install the <code>somepkg</code> at the version that has been tagged with <code>beta</code>.</p>
+<pre><code>npm install somepkg@beta
+</code></pre><h2 id="caveats">Caveats</h2>
+<p>Because dist-tags share the same namespace with semver, avoid using any tag
+names that may cause a conflict. The best practice is to avoid using tags
+beginning with a number or the letter &quot;v&quot;.</p>
 
                     
                     </section>
@@ -339,7 +384,7 @@
         </div>
 
         
-        <a href="../updating/semantic-versioning.html" class="navigation navigation-prev " aria-label="Previous page: Semantic Versioning"><i class="fa fa-angle-left"></i></a>
+        <a href="../updating/the-npm-semver-utility.html" class="navigation navigation-prev " aria-label="Previous page: The npm semver Utility"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../updating/the-npm-dist-tag-command.html" class="navigation navigation-next " aria-label="Next page: The npm dist-tag Command"><i class="fa fa-angle-right"></i></a>
